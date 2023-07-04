@@ -1,0 +1,4 @@
+﻿  dllmain.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\any(13): warning STL4038: The contents of <any> are available only with C++17 or later.
+     Creating library C:\Projects\OVIDA-RT\src\Plugins\Tracker\DllTracker\x64\Debug\DllTracker.lib and object C:\Projects\OVIDA-RT\src\Plugins\Tracker\DllTracker\x64\Debug\DllTracker.exp
+  DllTracker.vcxproj -> C:\Projects\OVIDA-RT\src\Plugins\Tracker\DllTracker\x64\Debug\DllTracker.dll

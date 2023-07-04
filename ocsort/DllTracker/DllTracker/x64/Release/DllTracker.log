@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  dllmain.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.36.32532\include\any(13): warning STL4038: The contents of <any> are available only with C++17 or later.
+     Creating library C:\Projects\OVIDA-RT\src\Plugins\Tracker\DllTracker\x64\Release\DllTracker.lib and object C:\Projects\OVIDA-RT\src\Plugins\Tracker\DllTracker\x64\Release\DllTracker.exp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 283 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  DllTracker.vcxproj -> C:\Projects\OVIDA-RT\src\Plugins\Tracker\DllTracker\x64\Release\DllTracker.dll
