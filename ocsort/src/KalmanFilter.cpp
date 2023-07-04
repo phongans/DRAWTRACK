@@ -1,4 +1,4 @@
-﻿#include "../include/KalmanFilter.hpp"
+﻿#include <KalmanFilter.hpp>
 #include <iostream>
 namespace ocsort {
     KalmanFilterNew::KalmanFilterNew() {};

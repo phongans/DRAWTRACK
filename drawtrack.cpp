@@ -52,8 +52,8 @@ void processFrame(const cv::Mat& frame, std::vector<Object>& objects, ocsort::OC
             int ID = int(j[4]);
             int Class = int(j[5]);
             float conf = j[6];
-            cv::putText(frame, cv::format("ID:%d", ID), cv::Point(j[0], j[1] - 5), 0, 2, cv::Scalar(0, 0, 255), 1, cv::LINE_AA);
-            cv::rectangle(frame, cv::Rect(j[0], j[1], j[2] - j[0] + 1, j[3] - j[1] + 1), cv::Scalar(0, 0, 255), 1);
+            cv::putText(frame, cv::format("ID:%d", ID), cv::Point(j[0], j[1] - 5), 0, 2, cv::Scalar(0, 0, 255), 2, cv::LINE_AA);
+            cv::rectangle(frame, cv::Rect(j[0], j[1], j[2] - j[0] + 1, j[3] - j[1] + 1), cv::Scalar(0, 0, 255), 2);
         }
 
         data.clear();
@@ -66,7 +66,7 @@ void videoODThread(const std::string& modelfile) {
 
     ocsort::OCSort tracker = ocsort::OCSort(0, 50, 1, 0.22136877277096445, 1, "giou", 0.3941737016672115, true);
 
-    cv::VideoCapture capture("C:\\Projects\\Research\\Models\\road.mp4");
+    cv::VideoCapture capture("../../data/video.mp4");
 
     bool isRunning = true;  // Variable for controlling the loop
 
@@ -93,7 +93,7 @@ void videoODThread(const std::string& modelfile) {
 }
 
 int main() {
-    std::string modelfile = "C:/Projects/Research/Models/yolov8s.onnx";
+    std::string modelfile = "../../data/yolov8s.onnx";
     std::thread videoThread(videoODThread, modelfile);
     videoThread.join();
     std::cout << "End of program." << std::endl;

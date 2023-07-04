@@ -1,4 +1,4 @@
-﻿#include "../include/OCSort.hpp"
+﻿#include <OCSort.hpp>
 #include "iomanip"
 #include <utility>
 

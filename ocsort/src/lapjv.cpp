@@ -1,4 +1,4 @@
-#include "../include/lapjv.hpp"
+#include <lapjv.hpp>
 #include <limits>
 #include <stdexcept>
 #include <stdio.h>

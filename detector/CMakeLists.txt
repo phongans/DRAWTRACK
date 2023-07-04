@@ -35,9 +35,3 @@ include(cmake/FindTensorRT.cmake)
 add_library(${PROJECT_NAME} SHARED ${inference_sources} ${CMAKE_CURRENT_SOURCE_DIR}/libtensorrt/src/engine.cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC include PRIVATE src ${TensorRT_INCLUDE_DIR} ${CUDA_TOOLKIT_INCLUDE})
 target_link_libraries(${PROJECT_NAME} PUBLIC ${TRT_API_LIBRARY} ${OpenCV_LIBS} ${TensorRT_LIBRARIES} ${CUDA_LIBRARIES})
-install(TARGETS ${PROJECT_NAME} LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
-install(DIRECTORY include/ DESTINATION include)
-
-# Build the inferenceTRT executable video
-# add_executable(sample sample.cpp ${inference_headers} ${inference_sources})
-# target_link_libraries(sample ${PROJECT_NAME})

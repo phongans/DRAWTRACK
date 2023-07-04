@@ -21,7 +21,7 @@ struct Object {
 class InferenceTRT {
 public:
     // Builds the onnx model into a TensorRT engine, and loads the engine into memory
-    InferenceTRT(const std::string& onnxModelPath, const float probabilityThreshold = 0.25f, const float nmsThreshold = 0.65f, const int topK = 100);
+    InferenceTRT(const std::string& onnxModelPath, const float probabilityThreshold = 0.6f, const float nmsThreshold = 0.75f, const int topK = 100);
 
     // Detect the objects in the image
     std::vector<Object> detectObjects(const cv::Mat& inputImgBGR);
