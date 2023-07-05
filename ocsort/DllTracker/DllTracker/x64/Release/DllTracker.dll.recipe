@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Projects\OVIDA-RT\src\Plugins\Tracker\DllTracker\x64\Release\DllTracker.dll</FullPath>
+      <FullPath>C:\Projects\Open-Sources\DRAWTRACK\ocsort\DllTracker\x64\Release\DllTracker.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

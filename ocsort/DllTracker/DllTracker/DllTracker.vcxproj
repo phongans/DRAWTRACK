@@ -133,7 +133,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalOptions>%(AdditionalOptions) /external:I "C:/eigen-3.4.0"</AdditionalOptions>
-      <AdditionalIncludeDirectories>C:\Projects\Research\ANSLIB-BYTETRACK\Sources\Tracker\ocsort\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Projects\Research\ANSLIB-BYTETRACK\Sources\Tracker\ocsort\include;C:\Projects\Open-Sources\DRAWTRACK\utils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
@@ -142,8 +142,11 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>C:\Projects\Research\ANSLIB-BYTETRACK\Sources\Tracker\ocsort\build\Release\libocsort.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>C:\Projects\Open-Sources\DRAWTRACK\ocsort\build\Release\libocsort.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y /d "C:\Projects\Research\ANSLIB-BYTETRACK\Sources\Tracker\ocsort\build\Release\libocsort.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="dllocsort.h" />

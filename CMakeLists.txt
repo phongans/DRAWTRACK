@@ -32,9 +32,11 @@ set(drawtrack_sources
 include_directories(detector/libtensorrt/include)
 include_directories(detector/include)
 include_directories(ocsort/include)
+include_directories(ocsort/DllTracker/DllTracker)
 
 find_library(DETECTOR_LIBRARY NAMES inferencetrt PATHS detector/build/Release)
 find_library(OCSORT_LIBRARY NAMES libocsort PATHS ocsort/build/Release)
+find_library(DLLOCSORT_LIBRARY NAMES DllTracker PATHS ocsort/DllTracker/x64/Release)
 find_library(TRT_API_LIBRARY NAMES tensorrt_cpp_api PATHS detector/libtensorrt/build/Release)
 
 set(LIBS
@@ -45,8 +47,13 @@ set(LIBS
     ${OCSORT_LIBRARY}
     ${DETECTOR_LIBRARY}
     ${TRT_API_LIBRARY}
+    ${DLLOCSORT_LIBRARY}
 )
 
 add_executable(${PROJECT_NAME} drawtrack.cpp ${drawtrack_sources} ${drawtrack_headers})
 target_link_libraries(${PROJECT_NAME} PUBLIC ${LIBS})
 target_include_directories(${PROJECT_NAME} PUBLIC ${drawtrack_headers} ${TensorRT_INCLUDE_DIR} ${CUDA_TOOLKIT_INCLUDE})
+
+add_executable(${PROJECT_NAME}dll drawtrackdll.cpp ${drawtrack_sources} ${drawtrack_headers})
+target_link_libraries(${PROJECT_NAME}dll PUBLIC ${LIBS})
+target_include_directories(${PROJECT_NAME}dll PUBLIC ${drawtrack_headers} ${TensorRT_INCLUDE_DIR} ${CUDA_TOOLKIT_INCLUDE})
